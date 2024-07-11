@@ -12,9 +12,6 @@ export const Home = () => {
         <Col>
           <Container>
             <Row>
-              <Col>Navbar</Col>
-            </Row>
-            <Row>
               <Col>Ondas</Col>
             </Row>
             <Row>
