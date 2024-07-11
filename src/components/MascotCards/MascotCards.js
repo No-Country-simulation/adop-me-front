@@ -1,5 +1,6 @@
 import React from "react";
 import { Mascota } from "../Mascota/Mascota";
+import Row from "react-bootstrap/Row";
 
 const mascotData = [
   {
@@ -13,7 +14,7 @@ const mascotData = [
     vacunado: true,
     descripcion:
       "Luna es una perrita juguetona y cariñosa. Le encanta jugar a la pelota y salir a pasear. Se lleva bien con otros perros y niños.",
-    fotos: [],
+    foto: "../Mascota/mascotsImg/luna.jpg",
     estado: "disponible",
     fechaIngreso: "2024-05-15",
   },
@@ -28,7 +29,7 @@ const mascotData = [
     vacunado: true,
     descripcion:
       "Toby es un gatito muy mimoso y ronroneante. Le encanta acurrucarse en tu regazo y recibir caricias. Es un poco tímido al principio, pero se adapta rápido a nuevos entornos.",
-    fotos: [],
+    foto: "../Mascota/mascotsImg/toby.jpg",
     estado: "disponible",
     fechaIngreso: "2024-06-02",
   },
@@ -43,7 +44,7 @@ const mascotData = [
     vacunado: true,
     descripcion:
       "Max es un perro grande y juguetón. Le encanta jugar a buscar y nadar. Es muy protector con su familia y se lleva bien con los niños.",
-    fotos: [],
+    foto: "../Mascota/mascotsImg/max.jpg",
     estado: "en proceso de adopción",
     fechaIngreso: "2024-03-10",
   },
@@ -58,7 +59,7 @@ const mascotData = [
     vacunado: true,
     descripcion:
       "Bella es una gata muy independiente y tranquila. Le gusta pasar tiempo sola, pero también disfruta de las caricias. Es un poco reservada al principio, pero con el tiempo se vuelve muy cariñosa.",
-    fotos: [],
+    foto: "../Mascota/mascotsImg/bella.jpg",
     estado: "disponible",
     fechaIngreso: "2024-04-25",
   },
@@ -73,7 +74,7 @@ const mascotData = [
     vacunado: true,
     descripcion:
       "Rocky es un perro muy leal y protector. Le encanta estar con su familia y salir a caminar. Es un poco desconfiado con los extraños, pero con el tiempo se socializa.",
-    fotos: [],
+    foto: "../Mascota/mascotsImg/rocky.jpg",
     estado: "disponible",
     fechaIngreso: "2024-02-08",
   },
@@ -88,21 +89,23 @@ const mascotData = [
     vacunado: true,
     descripcion:
       "Kitty es una gatita muy juguetona y traviesa. Le encanta jugar con pelotas y escalar muebles. Es muy cariñosa y le encanta estar en tu regazo.",
-    fotos: [],
+    fotoName: "../Mascota/mascotsImg/kitty.jpg",
     estado: "en proceso de adopción",
     fechaIngreso: "2024-05-18",
   },
 ];
 
 export function MascotCards() {
+  const mascotas = mascotData;
+
   return (
     <main>
-      <h2>Mascots available for adoption</h2>
-      <ul>
-        {mascotData.map((mascota) => {
-          <Mascota mascotaObj={mascota} key={mascota.id} />;
-        })}
-      </ul>
+      <h2>Mascotas en adopcion</h2>
+      <Row xs={1} md={3} className="g-4">
+        {mascotas.map((mascota) => (
+          <Mascota mascotaObj={mascota} key={mascota.id} />
+        ))}
+      </Row>
     </main>
   );
 }
