@@ -6,8 +6,13 @@ import Col from "react-bootstrap/Col";
 export function Mascota({ mascotaObj }) {
   return (
     <Col>
-      <Card border="dark" style={{ width: "18rem", height: "25rem" }}>
-        <Card.Img variant="top" src={mascotaObj.foto} alt={mascotaObj.nombre} />
+      <Card border="dark">
+        <Card.Img
+          variant="top"
+          style={{ width: "auto", height: "280px", objectFit: "cover" }}
+          src={mascotaObj.foto}
+          alt={mascotaObj.nombre}
+        />
         <Card.Body>
           <Card.Title>{mascotaObj.nombre}</Card.Title>
           <Card.Subtitle>
