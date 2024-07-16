@@ -3,7 +3,6 @@ import { Container, Image, Row, Col, Button } from "react-bootstrap";
 import { Facebook } from "react-bootstrap-icons";
 import { Instagram, Google, Github } from "react-bootstrap-icons";
 import ondas from "../../assets/ondas.jpg";
-import Navbar from "../../components/NavBar/NavBar"
 import "./home.css";
 
 export const Home = () => {
