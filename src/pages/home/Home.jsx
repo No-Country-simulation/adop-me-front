@@ -3,17 +3,18 @@ import { Container, Image, Row, Col, Button } from "react-bootstrap";
 import { Facebook } from "react-bootstrap-icons";
 import { Instagram, Google, Github } from "react-bootstrap-icons";
 import ondas from "../../assets/ondas.jpg";
+import Navbar from "../../components/NavBar/NavBar"
 import "./home.css";
 
 export const Home = () => {
   return (
     <Container className="fullwidth" fluid>
       <Row>
-        <Col className="img col-7">1 of 2</Col>
+        <Col className="img col-7"></Col>
         <Col className="col-5">
           <Container>
             <Row className="mt-4">
-              <Col>Navbar</Col>
+              <Col></Col>
             </Row>
             <Row>
               <Col>
