@@ -1,8 +1,9 @@
 .navbar {
   background: transparent;
   height: 5rem ;
-  width: 100%;
+  width: 99%;
   margin: 0 auto ;
+  margin-right: 2em;
   padding: 1rem 2rem;
   display: flex ;
   font-weight: 600;

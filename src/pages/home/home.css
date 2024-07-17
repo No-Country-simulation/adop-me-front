@@ -35,7 +35,7 @@
 }
 
 .btnJoin{
-    border: none;
+    border: none !important;
     border-radius: 25px  !important;
     background-color: #00cbd8 !important;
     width: 35%;
@@ -52,11 +52,24 @@
 }
 
 .onda2 {
-    height: 100px;
+    height: 150px;
     background-image: url('../../assets/onda2.png');
-    background-size: auto; 
-    background-position: right; 
+    background-size: 12rem; 
+    background-position: right bottom; 
+    position: absolute; 
+    bottom: 0; 
+    right: 0; 
     background-repeat: no-repeat; 
-    position: relative;
+    
   }
-
+ 
+  .card-select{
+    border: #544741 1px solid;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  
+  .card-select:hover {
+    transform: translateY(-5px);
+  }
