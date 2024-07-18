@@ -1,13 +1,19 @@
-import React from "react";
-import { Container, Image, Row, Col, Button } from "react-bootstrap";
+import {React,useState} from "react";
+import { Container, Image, Row, Col, Button, Modal} from "react-bootstrap";
 import { Facebook } from "react-bootstrap-icons";
 import { Instagram, Google, Github } from "react-bootstrap-icons";
 import ondas from "../../assets/ondas.jpg";
 import perroAzul from "../../assets/perroAzul.jpg";
 import gatoAzul from "../../assets/gatoAzul.jpg";
 import "./home.css";
+import { ModalForm } from "../../components/modal/Modal";
 
 export const Home = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  
   return (
     <Container className="fullwidth" fluid>
       <Row>
@@ -34,7 +40,7 @@ export const Home = () => {
             </Row>
             <Row>
               <Col className="colBtn">
-                <Button className="btnJoin">Unete</Button>{" "}
+                <Button className="btnJoin" onClick={handleShow}>Unete</Button>{" "}
               </Col>
             </Row>
             <Row>
@@ -74,6 +80,14 @@ export const Home = () => {
           </Col>
         </Row>
       </Container>
+
+     <ModalForm show={show} handleClose={handleClose}></ModalForm>
+
+
     </Container>
+
+
+
+
   );
 };
