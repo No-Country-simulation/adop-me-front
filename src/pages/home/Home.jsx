@@ -53,29 +53,36 @@ export const Home = () => {
               <Row className="url">www.adoptme.com</Row>
               <div className="onda2"></div>
             </Row>
-
-           
           </Container>
-          </Col>
+        </Col>
       </Row>
 
-            {/* Nueva sección */}
-      
+      {/* Nueva sección */}
+
       {/* Nueva sección */}
       <Container className="fullwidth mt-2" fluid>
         <Row>
-          <h2 className="text-center w-100 my-5">¿Quieres adoptar un perro o un gato?</h2>
+          <h2 className="text-center w-100 my-5">
+            ¿Quieres adoptar un perro o un gato?
+          </h2>
           <Col className="section">
             <Row className="justify-content-center align-items-center">
               <Col xs="auto" className="text-center">
-                <img src={perroAzul} alt="Perro Azul" className="img-fluid card-select" />
+                <img
+                  src={perroAzul}
+                  alt="Perro Azul"
+                  className="img-fluid card-select"
+                />
               </Col>
               <Col xs="auto" className="text-center">
-                <img src={gatoAzul} alt="Gato Azul" className="img-fluid card-select" />
+                <img
+                  src={gatoAzul}
+                  alt="Gato Azul"
+                  className="img-fluid card-select"
+                />
               </Col>
               <h3>texto prueba</h3>
               <br />
-              
             </Row>
           </Col>
         </Row>

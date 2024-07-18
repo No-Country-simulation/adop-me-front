@@ -15,7 +15,6 @@ const Navbar = () => {
   };
   return (
     <nav className="navbar">
-      
       {/*Navbar Desktop*/}
       <div className="navbar-logo">
         <Link
@@ -28,7 +27,8 @@ const Navbar = () => {
           onClick={scrollToTopPage}
         >
           <img src={logo} alt="Logo" className="logo" />
-        Dog Love</Link>
+          Dog Love
+        </Link>
       </div>
       <button
         className="desktopMenuBtn"
