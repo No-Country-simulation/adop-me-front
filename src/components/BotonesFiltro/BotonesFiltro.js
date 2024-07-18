@@ -1,7 +1,4 @@
-import React, { useState } from "react";
-import { Mascota } from "../Mascota/Mascota";
-import Row from "react-bootstrap/Row";
-import BotonesFiltro from "../BotonesFiltro/BotonesFiltro";
+import Button from "react-bootstrap/Button";
 
 const mascotData = [
   {
@@ -96,28 +93,29 @@ const mascotData = [
   },
 ];
 
-export function MascotCards() {
-  const mascotas = mascotData;
-  const [item, setItem] = useState(mascotas);
-  const mascotaItems = [...new Set(mascotas.map((val) => val.especie))];
-
-  function filtroMascotas(especie) {
-    const newItems = mascotas.filter((newVal) => newVal.especie === especie);
-    setItem(newItems);
-  }
+export default function BotonesFiltro({
+  mascotaItems,
+  filtroMascotas,
+  setItem,
+}) {
   return (
-    <main>
-      <h2 className="mb-5">Mascotas en adopcion</h2>
-      <BotonesFiltro
-        mascotaItems={mascotaItems}
-        filtroMascotas={filtroMascotas}
-        setItem={setItem}
-      />
-      <Row xs={1} md={3} className="g-4 px-5">
-        {item.map((mascota) => (
-          <Mascota mascotaObj={mascota} key={mascota.id} />
-        ))}
-      </Row>
-    </main>
+    <div className="d-flex justify-content-center mb-5">
+      {mascotaItems.map((val) => (
+        <Button
+          className="p-1 px-2 mx-5"
+          variant="info"
+          onClick={() => filtroMascotas(val)}
+        >
+          {val.toUpperCase()}
+        </Button>
+      ))}
+      <Button
+        className="p-1 px-2 mx-5"
+        variant="dark"
+        onClick={() => setItem(mascotData)}
+      >
+        TODOS
+      </Button>
+    </div>
   );
 }

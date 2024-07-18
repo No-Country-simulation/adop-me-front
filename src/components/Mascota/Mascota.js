@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import Collapse from "react-bootstrap/Collapse";
 
 export function Mascota({ mascotaObj }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <Col>
       <Card border="dark">
@@ -18,11 +21,21 @@ export function Mascota({ mascotaObj }) {
           <Card.Subtitle>
             Fecha de Ingreso: {mascotaObj.fechaIngreso}
           </Card.Subtitle>
-          <Card.Text>Edad: {mascotaObj.edad}</Card.Text>
+          <Card.Text>Edad: {mascotaObj.edad} años</Card.Text>
           <Card.Text>Tamaño: {mascotaObj.tamaño}</Card.Text>
-          <Card.Text>Descripcion: {mascotaObj.descripcion}</Card.Text>
-          <Button variant="info">Adoptar</Button>
+          <Button
+            variant="outline-info"
+            onClick={() => setOpen(!open)}
+            aria-controls="example-collapse-text"
+            aria-expanded={open}
+          >
+            {open ? "Ocultar" : "Mostrar"} descripcion:
+          </Button>
+          <Collapse in={open}>
+            <Card.Text>{mascotaObj.descripcion}</Card.Text>
+          </Collapse>
         </Card.Body>
+        <Button variant="success">Adoptar</Button>
       </Card>
     </Col>
   );
