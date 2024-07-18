@@ -102,7 +102,7 @@ export default function BotonesFiltro({
     <DropdownButton
       className="d-flex center mb-5 m-5"
       variant="info"
-      title="Filtrar Busqueda por:"
+      title="Filtrar Busqueda por: "
       id="bg-nested-dropdown"
     >
       {mascotaItems.map((val) => (

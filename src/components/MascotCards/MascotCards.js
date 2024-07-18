@@ -114,6 +114,7 @@ export function MascotCards() {
         filtroMascotas={filtroMascotas}
         setItem={setItem}
       />
+
       <Row xs={1} md={3} className="g-4 px-5">
         {item.map((mascota) => (
           <Mascota mascotaObj={mascota} key={mascota.id} />
