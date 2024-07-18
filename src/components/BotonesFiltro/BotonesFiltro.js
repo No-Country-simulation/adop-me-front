@@ -1,8 +1,4 @@
-import React, { useState } from "react";
-import { Mascota } from "../Mascota/Mascota";
-import Row from "react-bootstrap/Row";
-import BotonesFiltro from "../BotonesFiltro/BotonesFiltro";
-import { Container } from "react-bootstrap";
+import { Dropdown, DropdownButton } from "react-bootstrap";
 
 const mascotData = [
   {
@@ -97,28 +93,26 @@ const mascotData = [
   },
 ];
 
-export function MascotCards() {
-  const mascotas = mascotData;
-  const [item, setItem] = useState(mascotas);
-  const mascotaItems = [...new Set(mascotas.map((val) => val.especie))];
-
-  function filtroMascotas(especie) {
-    const newItems = mascotas.filter((newVal) => newVal.especie === especie);
-    setItem(newItems);
-  }
+export default function BotonesFiltro({
+  mascotaItems,
+  filtroMascotas,
+  setItem,
+}) {
   return (
-    <Container className="fullwidth" fluid>
-      <h2 className="mb-5 m-5">Mascotas en adopcion</h2>
-      <BotonesFiltro
-        mascotaItems={mascotaItems}
-        filtroMascotas={filtroMascotas}
-        setItem={setItem}
-      />
-      <Row xs={1} md={3} className="g-4 px-5">
-        {item.map((mascota) => (
-          <Mascota mascotaObj={mascota} key={mascota.id} />
-        ))}
-      </Row>
-    </Container>
+    <DropdownButton
+      className="d-flex center mb-5 m-5"
+      variant="info"
+      title="Filtrar Busqueda por:"
+      id="bg-nested-dropdown"
+    >
+      {mascotaItems.map((val) => (
+        <Dropdown.Item variant="info" onClick={() => filtroMascotas(val)}>
+          {val.toUpperCase()}
+        </Dropdown.Item>
+      ))}
+      <Dropdown.Item variant="secondary" onClick={() => setItem(mascotData)}>
+        TODOS
+      </Dropdown.Item>
+    </DropdownButton>
   );
 }
