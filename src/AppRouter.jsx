@@ -7,7 +7,7 @@ export const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/aboutus" element={<SuccessStories />}/>
+      <Route path="/about" element={<SuccessStories />} />
     </Routes>
   );
 };
