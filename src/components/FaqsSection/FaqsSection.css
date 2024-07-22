@@ -1,0 +1,78 @@
+.faqs {
+    max-width: 75rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faqs-title {
+    color: #544741;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  
+  .faqs-text{
+    color: #655954;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  .faqs-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  
+  .faqs .box {
+    background: white;
+    padding: 2rem;
+  }
+  
+  .faqs .additional-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 28rem;
+  }
+  
+  .accordion-item{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .faqs .icon-container {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4.5rem;
+    padding: 1rem;
+  }
+  
+  .faqs .info-title {
+    color: #544741;
+    margin-bottom: 0.5rem;
+  }
+  
+  .faqs .info-text {
+    color: #655954;
+  }
+  
+  .faqs .btn-primary {
+    background-color: #00cbd8;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  
+  .faqs .btn-primary:hover {
+    background-color: #1f858c;
+  }
+  

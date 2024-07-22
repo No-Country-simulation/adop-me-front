@@ -8,6 +8,7 @@ import gatoAzul from "../../assets/gatoAzul.jpg";
 import "./home.css";
 import { ModalForm } from "../../components/modal/Modal";
 
+
 export const Home = () => {
   const [show, setShow] = useState(false);
 
@@ -40,7 +41,7 @@ export const Home = () => {
             </Row>
             <Row>
               <Col className="colBtn">
-                <Button className="btnJoin" onClick={handleShow}>Unete</Button>{" "}
+                <Button className="btnJoin" onClick={handleShow}>Unete</Button>
               </Col>
             </Row>
             <Row>
@@ -81,7 +82,7 @@ export const Home = () => {
                   className="img-fluid card-select"
                 />
               </Col >
-              <h3 className="text-center"> Footer</h3>
+             
               <br />
             </Row>
           </Col>

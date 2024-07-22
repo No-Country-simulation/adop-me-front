@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  .about{
+    max-width: 100%;
+    padding: 2rem;
+    margin-top: 5rem;
+    margin-left: 0rem;
+    padding-left: 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+
+  .about-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem auto;
+    padding: 2rem;
+  }
+
+  .about-container-img{
+    position: relative;
+    width: 100%;
+    height: calc(300px + 20vw);
+  }
+
+  .about-img{
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .about-title{
+    color: #544741;
+    font-weight: 600;
+    font-size: 3.5rem;
+  }
+
+  .about-text {
+    color: #655954;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+.principios-container-intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.principios-container-title {
+    color: #544741;
+    font-weight: 600;
+    font-size: 3.5rem;
+  }
+
+  .principios-container-text {
+    color: #655954;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+.principios-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.principios-container-box {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 4rem;
+}
+
+.principios-container-intro {
+    text-align: center;
+    margin: auto;
+}
+
+.principios-container-img{
+    width: 150px;
+    height: 150px;
+}
+
+.principios-container-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #544741;
+}
+
+.principios-container-text {
+    font-size: 1.2rem;
+    color: #655954;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.principios-box-title{
+    color: #544741;
+}
+
+.principios-box-text{
+    color: #655954;
+}
+
+  @media (min-width: 768px) {
+    .about {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .about-container-im {
+        width: 50%;
+        height: 600px;
+    }
+}

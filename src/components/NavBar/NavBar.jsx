@@ -1,24 +1,41 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import "./NavBar.css";
 import logo from "../../assets/logo.png";
-import {  animateScroll as scroll } from "react-scroll";
-import { Link } from "react-router-dom"
+import { animateScroll as scroll } from "react-scroll";
+import { Link } from "react-router-dom";
 import menu from "../../assets/menu.png";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [navBackground, setNavBackground] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setNavBackground(true);
+    } else {
+      setNavBackground(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const scrollToTopPage = () => {
     scroll.scrollToTop({
       duration: 500,
       smooth: "easeInOutQuart",
     });
   };
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${navBackground ? "scrolled" : ""}`}>
       {/*Navbar Desktop*/}
       <div className="navbar-logo">
-        <Link Link
+        <Link
           to="/"
           spy={true}
           smooth={true}
@@ -28,10 +45,9 @@ const Navbar = () => {
           onClick={scrollToTopPage}
         >
           <img src={logo} alt="Logo" className="logo" />
-         
         </Link>
       </div>
-    
+
       <div className="desktopMenu">
         <Link
           activeClass="active"
@@ -55,7 +71,6 @@ const Navbar = () => {
         >
           NOSOTROS
         </Link>
-       
         <Link
           activeClass="active"
           to="/mascotas"
@@ -69,7 +84,7 @@ const Navbar = () => {
         </Link>
         <Link
           activeClass="active"
-          to="/mascotas"
+          to="/contact"
           spy={true}
           smooth={true}
           offset={-50}

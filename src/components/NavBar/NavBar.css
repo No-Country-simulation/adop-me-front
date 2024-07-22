@@ -1,45 +1,47 @@
 .navbar {
   background: transparent;
-  height: 5rem ;
+  height: 5rem;
   width: 99%;
-  margin: 0 auto ;
+  margin: 0 auto;
   margin-right: 2em;
   padding: 1rem 2rem;
-  display: flex ;
+  display: flex;
   font-weight: 600;
   justify-content: space-between;
   position: fixed !important;
-  top: -2em;
-
-
-  
+  transition: background-color 0.3s ease-in-out;
 }
 
+.navbar.scrolled {
+  background-color: white;
+  box-shadow: #544741;
+}
 
-
-.navbar-logo{
-    width: 150px;
-    height: 150px;
-    position: relative;
-    overflow: hidden;
+.navbar-logo {
+  top: 0.5em;
+  width: 120px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
 }
 
 .logo-link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: #00cbd8;
-    cursor: pointer;
-    margin: 0 2rem;
-  }
-
-.logo{
-  object-fit: cover;
-  width: 6rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #00cbd8;
   cursor: pointer;
+  margin: 0 2rem;
+}
+
+.logo {
+  object-fit: cover;
+  width: 5rem;
+  cursor: pointer;
+  top: 0.5em;
 }
 
 .desktopMenuListItem {
