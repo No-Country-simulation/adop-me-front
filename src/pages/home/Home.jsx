@@ -1,5 +1,5 @@
 import {React,useState} from "react";
-import { Container, Image, Row, Col, Button, Modal} from "react-bootstrap";
+import { Container, Image, Row, Col, Button} from "react-bootstrap";
 import { Facebook } from "react-bootstrap-icons";
 import { Instagram, Google, Github } from "react-bootstrap-icons";
 import ondas from "../../assets/ondas.jpg";
@@ -80,8 +80,8 @@ export const Home = () => {
                   alt="Gato Azul"
                   className="img-fluid card-select"
                 />
-              </Col>
-              <h3>texto prueba</h3>
+              </Col >
+              <h3 className="text-center"> Footer</h3>
               <br />
             </Row>
           </Col>

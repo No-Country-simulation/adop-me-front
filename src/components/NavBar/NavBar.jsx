@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 import "./NavBar.css";
 import logo from "../../assets/logo.png";
-import { Link, animateScroll as scroll } from "react-scroll";
+import {  animateScroll as scroll } from "react-scroll";
+import { Link } from "react-router-dom"
 import menu from "../../assets/menu.png";
 
 const Navbar = () => {
@@ -17,8 +18,8 @@ const Navbar = () => {
     <nav className="navbar">
       {/*Navbar Desktop*/}
       <div className="navbar-logo">
-        <Link
-          to="intro"
+        <Link Link
+          to="/"
           spy={true}
           smooth={true}
           offset={-100}
@@ -27,23 +28,14 @@ const Navbar = () => {
           onClick={scrollToTopPage}
         >
           <img src={logo} alt="Logo" className="logo" />
-          Dog Love
+         
         </Link>
       </div>
-      <button
-        className="desktopMenuBtn"
-        onClick={() => {
-          document
-            .getElementById("contact")
-            .scrollIntoView({ behavior: "smooth" });
-        }}
-      >
-        JOIN US
-      </button>
+    
       <div className="desktopMenu">
         <Link
           activeClass="active"
-          to="home"
+          to="/"
           spy={true}
           smooth={true}
           offset={-100}
@@ -61,40 +53,30 @@ const Navbar = () => {
           duration={500}
           className="desktopMenuListItem"
         >
-          ABOUT US
+          NOSOTROS
         </Link>
+       
         <Link
           activeClass="active"
-          to="share"
+          to="/mascotas"
           spy={true}
           smooth={true}
           offset={-50}
           duration={500}
           className="desktopMenuListItem"
         >
-          SHARE YOUR DOG
+          ADOPTA
         </Link>
         <Link
           activeClass="active"
-          to="adopt"
+          to="/mascotas"
           spy={true}
           smooth={true}
           offset={-50}
           duration={500}
           className="desktopMenuListItem"
         >
-          ADOPT
-        </Link>
-        <Link
-          activeClass="active"
-          to="contact"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="desktopMenuListItem"
-        >
-          CONTACT
+          CONTACTANOS
         </Link>
       </div>
       {/*Navbar Mobile*/}
