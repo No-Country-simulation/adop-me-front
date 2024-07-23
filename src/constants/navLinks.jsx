@@ -1,22 +1,22 @@
 export const navLinks = [
     {
-      label: "Home",
+      label: "Inicio",
       url: "/",
     },
     {
-      label: "About",
+      label: "Nosotros",
       url: "/about",
     },
     {
-      label: "Share Your Dog",
+      label: "Mascotas",
       url: "/share",
     },
     {
-      label: "Adopt",
+      label: "Adoptar",
       url: "/adopt",
     },
     {
-      label: "Contact",
+      label: "Contacto",
       url: "/contact",
     },
   ];

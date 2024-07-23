@@ -108,12 +108,18 @@ html, body {
 .social-link {
   width: 2.5rem;
   height: 2.5rem;
-  background: purple;
   color: peach;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+}
+
+.footer-social-icon{
+  object-fit: cover;
+  height: 2rem;
+  width: 2rem;
+  margin: 0 0.75rem;
 }
 
 .form {

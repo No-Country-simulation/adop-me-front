@@ -3,6 +3,10 @@ import FaqsSection from "../../components/FaqsSection/FaqsSection";
 import "./Contact.css";
 import Contact1 from "../../assets/contact1.png";
 import Contact2 from "../../assets/contact2.png";
+import facebook from "../../assets/facebook.png";
+import instagram from "../../assets/instagram.png";
+import twitter from "../../assets/twitter.png";
+import youtube from "../../assets/youtube.png";
 
 export const Contact = () => {
   return (
@@ -46,8 +50,26 @@ export const Contact = () => {
             </div>
             <h6 className="contact-container-social">Redes Sociales</h6>
             <div className="social-profiles">
-              Social Links
-              <a href="" className="social-link"></a>
+            <a href="https://www.facebook.com/?locale=es_LA"  target="_blank" rel="noreferrer">
+
+<img src={facebook} alt="Facebook" className="footer-social-icon" />
+</a>
+
+<a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+<img
+  src={instagram}
+  alt="Instragram"
+  className="footer-social-icon"
+/>
+</a>
+
+<a href="https://x.com/?lang=es" target="_blank" rel="noreferrer">
+<img src={twitter} alt="Twitter" className="footer-social-icon" />
+</a>
+
+<a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
+<img src={youtube} alt="Youtube" className="footer-social-icon" />
+</a>
             </div>
           </div>
           <div className="form">

@@ -6,12 +6,14 @@ import menu from "../../assets/menu.png";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+
   const scrollToTopPage = () => {
     scroll.scrollToTop({
       duration: 500,
       smooth: "easeInOutQuart",
     });
   };
+
   return (
     <nav className="navbar">
       {/*Navbar Desktop*/}
@@ -26,18 +28,8 @@ const Navbar = () => {
           onClick={scrollToTopPage}
         >
           <img src={logo} alt="Logo" className="logo" />
-        Dog Love</Link>
+        </Link>
       </div>
-      <button
-        className="desktopMenuBtn"
-        onClick={() => {
-          document
-            .getElementById("contact")
-            .scrollIntoView({ behavior: "smooth" });
-        }}
-      >
-        JOIN US
-      </button>
       <div className="desktopMenu">
         <Link
           activeClass="active"
@@ -48,7 +40,7 @@ const Navbar = () => {
           duration={500}
           className="desktopMenuListItem"
         >
-          HOME
+          INICIO
         </Link>
         <Link
           activeClass="active"
@@ -59,7 +51,7 @@ const Navbar = () => {
           duration={500}
           className="desktopMenuListItem"
         >
-          ABOUT US
+          NOSOTROS
         </Link>
         <Link
           activeClass="active"
@@ -70,7 +62,7 @@ const Navbar = () => {
           duration={500}
           className="desktopMenuListItem"
         >
-          SHARE YOUR DOG
+          MASCOTAS
         </Link>
         <Link
           activeClass="active"
@@ -81,7 +73,7 @@ const Navbar = () => {
           duration={500}
           className="desktopMenuListItem"
         >
-          ADOPT
+          ADOPTAR
         </Link>
         <Link
           activeClass="active"
@@ -92,7 +84,7 @@ const Navbar = () => {
           duration={500}
           className="desktopMenuListItem"
         >
-          CONTACT
+          CONTACTO
         </Link>
       </div>
       {/*Navbar Mobile*/}
@@ -113,7 +105,7 @@ const Navbar = () => {
           className="listItem"
           onClick={() => setShowMenu(false)}
         >
-          HOME
+          INICIO
         </Link>
         <Link
           activeClass="active"
@@ -125,7 +117,7 @@ const Navbar = () => {
           className="listItem"
           onClick={() => setShowMenu(false)}
         >
-          ABOUT US
+          NOSOTROS
         </Link>
         <Link
           activeClass="active"
@@ -137,7 +129,7 @@ const Navbar = () => {
           className="listItem"
           onClick={() => setShowMenu(false)}
         >
-          SHARE YOUR DOG
+          MASCOTAS
         </Link>
         <Link
           activeClass="active"
@@ -149,7 +141,7 @@ const Navbar = () => {
           className="listItem"
           onClick={() => setShowMenu(false)}
         >
-          ADOPT
+          ADOPTAR
         </Link>
         <Link
           activeClass="active"
@@ -161,7 +153,7 @@ const Navbar = () => {
           className="listItem"
           onClick={() => setShowMenu(false)}
         >
-          CONTACT
+          CONTACTO
         </Link>
       </div>
     </nav>

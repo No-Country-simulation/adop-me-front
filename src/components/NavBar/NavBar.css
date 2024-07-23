@@ -1,9 +1,7 @@
 .navbar {
   background: white;
   height: 5rem;
-  width: 100vw;
-  max-width: 75rem;
-  margin: 0rem auto;
+  width: 100%;
   padding: 1rem 2rem;
   display: flex;
   font-weight: 600;
@@ -14,26 +12,26 @@
   z-index: 3;
 }
 
-.navbar-logo{
-    width: 150px;
-    height: 150px;
-    position: relative;
-    overflow: hidden;
+.navbar-logo {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
 }
 
 .logo-link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: #00cbd8;
-    cursor: pointer;
-    margin: 2rem;
-  }
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #00cbd8;
+  cursor: pointer;
+  margin: 2rem;
+}
 
-.logo{
+.logo {
   object-fit: cover;
   height: 5rem;
   width: 6rem;
@@ -51,21 +49,6 @@
   color: #00cbd8;
   padding-bottom: 0.5rem;
   border-bottom: 3px solid #00cbd8;
-}
-
-.desktopMenuBtn {
-  padding: 0.2rem 3rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 2rem;
-  color: white;
-  background: #00cbd8;
-  display: inline-block;
-}
-
-.desktopMenuBtn::after {
-  cursor: pointer;
 }
 
 .active {
@@ -98,7 +81,7 @@
   color: #544741;
   padding: 0.5rem 3rem;
   margin: 0.25rem;
-  background: rgb (30, 30, 30);
+  background: rgb(30, 30, 30);
   text-decoration: none;
 }
 

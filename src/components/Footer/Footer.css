@@ -14,6 +14,11 @@
     font-size: 1.25rem;
     font-weight: 600;
   }
+
+  .footer-logo-img{
+    width: 75px;
+    height: 75px;
+  }
   
   .footer-navbar {
     display: flex;
@@ -41,6 +46,19 @@
     align-items: center;
     justify-content: space-between;
   }
+
+
+  .footer-social-icon{
+    object-fit: cover;
+    height: 2rem;
+    width: 2rem;
+    margin: 0 0.75rem;
+}
+
+.footer-social-icon:hover{
+    scale: 1.2;
+}
+  
   
   .footer-contact {
     max-width: 100%;
