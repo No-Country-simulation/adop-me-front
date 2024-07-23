@@ -1,5 +1,7 @@
 import React from 'react';
 import "./About.css";
+
+import { SuccessStories } from "../sucessStories/SuccessStories"
 import Aboutimg from "../../assets/aboutimg.png";
 import mision from "../../assets/mision.png";
 import vision from "../../assets/vision.png";
@@ -9,7 +11,7 @@ import valores from "../../assets/valores.png";
 export const About = () => {
   return (
     <>
-      <section className='about'>
+      <section className='about min-vh-100'>
             <div className='about-container-img'>
                 <img src={Aboutimg} alt="" className='about-img'/>
             </div>
@@ -24,7 +26,7 @@ export const About = () => {
       <section className='principios'>
         <div className='principios-container'>
             <div className='principios-container-intro'>
-                <h2 className='principios-container-title'>Nuestros Principios</h2>
+                <h2 className='principios-container-title mt-5'>Nuestros Principios</h2>
                 <p className='principios-container-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nihil officia dolores esse distinctio praesentium?</p>
             </div>
         </div>
@@ -51,6 +53,7 @@ export const About = () => {
         </div>
         </div>
       </section>
+      <SuccessStories></SuccessStories>
     </>
   )
 }

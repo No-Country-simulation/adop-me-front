@@ -7,6 +7,7 @@ import perroAzul from "../../assets/perroAzul.jpg";
 import gatoAzul from "../../assets/gatoAzul.jpg";
 import "./home.css";
 import { ModalForm } from "../../components/modal/Modal";
+import { SuccessStories } from "../sucessStories/SuccessStories"
 
 
 export const Home = () => {
@@ -82,9 +83,10 @@ export const Home = () => {
                   className="img-fluid card-select"
                 />
               </Col >
-             
-              <br />
+            
+    
             </Row>
+              <SuccessStories />
           </Col>
         </Row>
       </Container>

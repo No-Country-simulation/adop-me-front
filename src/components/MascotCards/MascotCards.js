@@ -17,6 +17,7 @@ const mascotData = [
     descripcion:
       "Luna es una perrita juguetona y cariñosa. Le encanta jugar a la pelota y salir a pasear. Se lleva bien con otros perros y niños.",
     foto: "images/luna.jpg",
+    foto: "images/luna.jpg",
     estado: "disponible",
     fechaIngreso: "2024-05-15",
   },
@@ -31,6 +32,7 @@ const mascotData = [
     vacunado: true,
     descripcion:
       "Toby es un gatito muy mimoso y ronroneante. Le encanta acurrucarse en tu regazo y recibir caricias. Es un poco tímido al principio, pero se adapta rápido a nuevos entornos.",
+    foto: "images/toby.jpg",
     foto: "images/toby.jpg",
     estado: "disponible",
     fechaIngreso: "2024-06-02",
@@ -47,6 +49,7 @@ const mascotData = [
     descripcion:
       "Max es un perro grande y juguetón. Le encanta jugar a buscar y nadar. Es muy protector con su familia y se lleva bien con los niños.",
     foto: "images/max.jpg",
+    foto: "images/max.jpg",
     estado: "en proceso de adopción",
     fechaIngreso: "2024-03-10",
   },
@@ -61,6 +64,7 @@ const mascotData = [
     vacunado: true,
     descripcion:
       "Bella es una gata muy independiente y tranquila. Le gusta pasar tiempo sola, pero también disfruta de las caricias. Es un poco reservada al principio, pero con el tiempo se vuelve muy cariñosa.",
+    foto: "images/bella.jpg",
     foto: "images/bella.jpg",
     estado: "disponible",
     fechaIngreso: "2024-04-25",
@@ -77,6 +81,7 @@ const mascotData = [
     descripcion:
       "Rocky es un perro muy leal y protector. Le encanta estar con su familia y salir a caminar. Es un poco desconfiado con los extraños, pero con el tiempo se socializa.",
     foto: "images/rocky.jpg",
+    foto: "images/rocky.jpg",
     estado: "disponible",
     fechaIngreso: "2024-02-08",
   },
@@ -91,6 +96,7 @@ const mascotData = [
     vacunado: true,
     descripcion:
       "Kitty es una gatita muy juguetona y traviesa. Le encanta jugar con pelotas y escalar muebles. Es muy cariñosa y le encanta estar en tu regazo.",
+    foto: "images/kitty.jpg",
     foto: "images/kitty.jpg",
     estado: "en proceso de adopción",
     fechaIngreso: "2024-05-18",
