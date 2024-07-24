@@ -1,6 +1,5 @@
 .navbar {
   background: transparent;
-  height: 5rem;
   width: 99%;
   margin: 0 auto;
   margin-right: 2em;
@@ -10,6 +9,7 @@
   justify-content: space-between;
   position: fixed !important;
   transition: background-color 0.3s ease-in-out;
+  z-index: 1;
 }
 
 .navbar.scrolled {

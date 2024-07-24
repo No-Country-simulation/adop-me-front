@@ -23,10 +23,22 @@ const Footer = () => {
           </ul>
         </nav>
         <div className="footer-social">
-          <a href="#">Facebook<img src="" alt="" /></a>
-          <a href="#">Instagram<img src="" alt="" /></a>
-          <a href="#">Red<img src="" alt="" /></a>
-          <a href="#">Red<img src="" alt="" /></a>
+          <a href="#">
+            Facebook
+            <img src="" alt="" />
+          </a>
+          <a href="#">
+            Instagram
+            <img src="" alt="" />
+          </a>
+          <a href="#">
+            Red
+            <img src="" alt="" />
+          </a>
+          <a href="#">
+            Red
+            <img src="" alt="" />
+          </a>
         </div>
       </div>
       {/* contact details */}
@@ -39,7 +51,7 @@ const Footer = () => {
         ))}
       </div>
       {/* copyright text */}
-      <hr className="footer-bar"/>
+      <hr className="footer-bar" />
       <p className="footer-copyright">
         Copyright © {new Date().getFullYear()} No Country. All right reserved.
       </p>
