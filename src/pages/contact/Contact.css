@@ -159,11 +159,70 @@ html, body {
   top: 55%;
 }
 
-@media (min-width: 768px) {
-  .contact-top {
-    max-width: 80vw;
-  }
 
+@media (max-width:1074px){
+  .contact-top{
+    max-width: 100%;
+  }
+  .contact-container-top{
+    margin: 3rem;
+  }
+  .contact-icon2 {
+    left: 61%;
+  }
+}
+
+@media (max-width:1074px){
+  .contact-icon2 {
+    left: 55%;
+    top: 58%;
+  }
+}
+
+
+@media (max-width:900px){
+  .contact-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .contact-info {
+    max-width: 100%;
+  }
+  .contact-container-top{
+    margin: 2rem;
+  }
+  .contact-img{
+    width: 80%;
+  }
+  .message {
+    min-height: 150px;
+    width: 25rem;
+  }
+  .form-btn {
+    width: 25rem;
+  }
+}
+
+@media (max-width:600px){
+  .contact-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .contact-container-top{
+    margin: 2rem;
+  }
+}
+
+@media (max-width:450px){
+  .contact-img{
+    width: 100%;
+  }
+}
+
+
+@media (min-width: 768px) {
   .contact-info {
     flex-direction: row;
   }

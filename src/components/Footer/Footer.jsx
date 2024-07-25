@@ -12,45 +12,38 @@ import Logo from "../../assets/logo2.png";
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-logo">
-        <Link to="/" className="footer-logo-link">
-          <img src={Logo} alt="Logo" className="footer-logo-img" />
-        </Link>
-        <nav className="footer-navbar">
-          <ul className="footer-navbar-list">
-            {navLinks.map((link, index) => (
-              <ol key={index}>
-                <Link to={link.url} className="footer-navbar-links">
-                  {link.label}
-                </Link>
-              </ol>
-            ))}
-          </ul>
-        </nav>
+      <div className="footer-logo-container">
+        <div className="footer-logo">
+          <Link to="/" className="footer-logo-link">
+            <img src={Logo} alt="Logo" className="footer-logo-img" />
+          </Link>
+          <nav className="footer-navbar">
+            <ul className="footer-navbar-list">
+              {navLinks.map((link, index) => (
+                <li key={index}>
+                  <Link to={link.url} className="footer-navbar-links">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
         <div className="footer-social">
-          <a href="https://www.facebook.com/?locale=es_LA"  target="_blank" rel="noreferrer">
-
+          <a href="https://www.facebook.com/?locale=es_LA" target="_blank" rel="noreferrer">
             <img src={facebook} alt="Facebook" className="footer-social-icon" />
           </a>
-
           <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-            <img
-              src={instagram}
-              alt="Instragram"
-              className="footer-social-icon"
-            />
+            <img src={instagram} alt="Instragram" className="footer-social-icon" />
           </a>
-
           <a href="https://x.com/?lang=es" target="_blank" rel="noreferrer">
             <img src={twitter} alt="Twitter" className="footer-social-icon" />
           </a>
-
           <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
             <img src={youtube} alt="Youtube" className="footer-social-icon" />
           </a>
         </div>
       </div>
-      {/* contact details */}
       <div className="footer-contact">
         {contactDetails.map((detail, index) => (
           <div key={index} className="footer-contact-container">
@@ -59,7 +52,6 @@ const Footer = () => {
           </div>
         ))}
       </div>
-      {/* copyright text */}
       <hr className="footer-bar" />
       <p className="footer-copyright">
         Copyright © {new Date().getFullYear()} No Country. All right reserved.

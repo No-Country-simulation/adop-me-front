@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.refugios {
+  width: 100%;
+}
+
+.refugios-top {
+  margin: 3rem 0rem 0rem 6rem;
+  padding-top: 4rem;
+  display: flex;
+  align-items: center;
+  max-width: 90%;
+}
+
+.refugios-img {
+  width: 40%;
+  mask-image: linear-gradient(white 80%, transparent);
+  margin-left: -6rem;
+}
+
+.refugios-container-top {
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+.refugios-container-title {
+  color: #544741;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.refugios-container-text {
+  color: #655954;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.refugios-info {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 90%;
+  margin: 2rem auto;
+  height: 35rem;
+}
+
+.refugios-container {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.form {
+  margin-top: 1.25rem;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.message {
+  min-height: 150px;
+}
+
+.refugios-btn {
+  background-color: #00cbd8;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.refugios-btn:hover {
+  background-color: #1f858c;
+}
+
+.form-img {
+  position: absolute;
+  left: 60%;
+  top: 75%;
+  height: 350px;
+  width: 500px;
+}
+
+@media (max-width: 1012px) {
+    .form-img {
+        left: 56%;
+        top: 75%;
+        height: 300px;
+        width: 425px;
+      }
+      .refugios-img {
+        width: 60%;
+      }
+}
+
+@media (max-width: 965px) {
+    .refugios-info {
+        margin-top: 3rem;
+      }
+    .form-img {
+        left: 55%;
+        top: 65%;
+        height: 300px;
+        width: 450px;
+      }
+}
+
+
+@media (max-width: 768px) {
+    .refugios-top {
+        margin-right: 3rem;
+      }
+      .refugios-img {
+        width: 350px;
+        height: 350px;
+      }
+      .refugios.container-title{
+        font-size: 1rem;
+      }
+    .refugios.container-text{
+        font-size: 0.5rem;
+    }
+    .refugios-form-img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .form-img {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    .refugios-info{
+        height: auto;
+        gap: 0;
+    }
+}
+
+@media (max-width: 680px) {
+    .refugios-top {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       margin: 2rem;
+    }
+    .refugios-img{
+        margin-left: -22rem;
+    }
+}
+
+@media (max-width: 655px) {
+    .refugios-img{
+        margin-left: -20rem;
+    }
+}
+
+@media (max-width: 625px) {
+    .refugios-img{
+        margin-left: -18rem;
+    }
+}
+
+@media (max-width: 585px) {
+    .refugios-img{
+        margin-left: -16rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .refugios-img{
+        margin-left: -14rem;
+    }
+}
+
+@media (max-width: 525px) {
+    .refugios-img{
+        margin-left: -12rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .form-img {
+        height: 250px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .refugios-img{
+        margin-left: -9rem;
+    }
+}
+
+@media (max-width: 440px) {
+    .refugios-img{
+        margin-left: -7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .refugios-container-top {
+        padding: 0.5rem;
+    }
+    .refugios-img{
+        margin-left: -4rem;
+    }
+}
+
+@media (min-width: 768px) {
+  .refugios-top {
+    max-width: 80vw;
+    margin-right: 2rem;
+  }
+  .refugios-info {
+    flex-direction: row;
+  }
+
+  .form-input {
+    flex-direction: row;
+  }
+
+  .form {
+    height: 34rem;
+  }
+}
