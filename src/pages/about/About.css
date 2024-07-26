@@ -33,7 +33,7 @@ body {
 .about-container-img {
   position: relative;
   width: 100%;
-  height: calc(300px + 15vw);
+  height: calc(300px + 20vw);
 }
 
 .about-img {
@@ -58,6 +58,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 2rem;
 }
 
 .principios-container-title {

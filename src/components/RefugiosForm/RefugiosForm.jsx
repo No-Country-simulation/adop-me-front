@@ -2,19 +2,23 @@ import React from "react";
 import "./RefugiosForm.css";
 import Refugios1 from "../../assets/refugios1.png";
 import Refugios2 from "../../assets/refugios2.png";
+import { motion } from "framer-motion";
 
 export const RefugiosForm = () => {
   return (
     <>
       <section className="refugios">
         <section className="refugios-top">
-          <img
+        <motion.img
             src={Refugios1}
             alt="refugios-icon"
+            className="refugios-img"
+            initial={{ x: "-7rem", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 2, type: "spring" }}
             width={450}
             height={355}
-            className="refugios-img"
-          />
+          ></motion.img>
           <div className="refugios-container-top">
             <h1 className="refugios-container-title">
               Nos encantaría que formes parte de nosotros.
@@ -33,7 +37,7 @@ export const RefugiosForm = () => {
               <input type="text" placeholder="Nombre de Contacto" />
             </div>
             <div className="form-input">
-              <input type="text" placeholder="Nombre de Fantasía" />
+              <input type="text" placeholder="Nombre del Refugio" />
               <input type="text" placeholder="Razón Social" />
             </div>
             <div className="form-input">
