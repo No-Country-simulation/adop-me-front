@@ -9,22 +9,24 @@ export const Contact = () => {
     <>
       <section className="contact">
         <section className="contact-top">
-        <img
-                src={Contact1}
-                alt="contact-icon"
-                width={450}
-                height={355}
-                className="contact-img"
-              />
+          <img
+            src={Contact1}
+            alt="contact-icon"
+            width={450}
+            height={355}
+            className="contact-img"
+          />
           <div className="contact-container-top">
             <h1 className="contact-container-title">
               Nos encantaría que te pongas en contacto con nosotros.
             </h1>
             <h3 className="contact-container-text">
-              Cuéntanos brevemente cómo ayudarte y déjanos un teléfono y mail de contacto. Nosotros te llamamos a la brevedad.
+              Cuéntanos brevemente cómo ayudarte y déjanos un teléfono y mail de
+              contacto. Nosotros te llamamos a la brevedad.
               <br />
               <br />
-              También puedes contactarnos para contarnos lo que necesites, o enviarnos información sobre casos de maltrato o abandono:
+              También puedes contactarnos para contarnos lo que necesites, o
+              enviarnos información sobre casos de maltrato o abandono:
             </h3>
           </div>
         </section>

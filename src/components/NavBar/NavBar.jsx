@@ -62,7 +62,7 @@ const Navbar = () => {
         </Link>
         <Link
           activeClass="active"
-          to="about"
+          to="/about"
           spy={true}
           smooth={true}
           offset={-50}
@@ -104,7 +104,7 @@ const Navbar = () => {
       <div className="navMenu" style={{ display: showMenu ? "flex" : "none" }}>
         <Link
           activeClass="active"
-          to="intro"
+          to="/"
           spy={true}
           smooth={true}
           offset={-100}
@@ -116,7 +116,7 @@ const Navbar = () => {
         </Link>
         <Link
           activeClass="active"
-          to="about"
+          to="/about"
           spy={true}
           smooth={true}
           offset={-50}
@@ -128,7 +128,7 @@ const Navbar = () => {
         </Link>
         <Link
           activeClass="active"
-          to="share"
+          to="/share"
           spy={true}
           smooth={true}
           offset={-50}
@@ -140,7 +140,7 @@ const Navbar = () => {
         </Link>
         <Link
           activeClass="active"
-          to="adopt"
+          to="/adopt"
           spy={true}
           smooth={true}
           offset={-50}
@@ -152,7 +152,7 @@ const Navbar = () => {
         </Link>
         <Link
           activeClass="active"
-          to="contact"
+          to="/contact"
           spy={true}
           smooth={true}
           offset={-50}
