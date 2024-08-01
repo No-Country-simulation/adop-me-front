@@ -1,21 +1,25 @@
-import {React,useState} from "react";
-import { Container, Image, Row, Col, Button} from "react-bootstrap";
-import { Facebook } from "react-bootstrap-icons";
-import { Instagram, Google, Github } from "react-bootstrap-icons";
-import ondas from "../../assets/ondas.jpg";
-import perroAzul from "../../assets/perroAzul.jpg";
-import gatoAzul from "../../assets/gatoAzul.jpg";
-import "./home.css";
-import { ModalForm } from "../../components/modal/Modal";
-import { SuccessStories } from "../sucessStories/SuccessStories"
-
+import { React, useState } from 'react';
+import { Container, Image, Row, Col, Button, Alert } from 'react-bootstrap';
+import { Facebook, Instagram, Google, Github } from 'react-bootstrap-icons';
+import ondas from '../../assets/ondas.jpg';
+import perroAzul from '../../assets/perroAzul.jpg';
+import gatoAzul from '../../assets/gatoAzul.jpg';
+import './home.css';
+import { ModalForm } from '../../components/modal/Modal';
+import { SuccessStories } from '../sucessStories/SuccessStories';
 
 export const Home = () => {
   const [show, setShow] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
+  const handleLoginSuccess = () => {
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 3000); // Ocultar la alerta después de 3 segundos
+  };
+
   return (
     <Container className="fullwidth" fluid>
       <Row>
@@ -30,7 +34,7 @@ export const Home = () => {
             </Row>
             <Row>
               <Col>
-                <h2 className="subTitulo"> Adopta amor, adopta una mascota</h2>
+                <h2 className="subTitulo">Adopta amor, adopta una mascota</h2>
                 <p className="descripcion">
                   <strong>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -59,9 +63,6 @@ export const Home = () => {
         </Col>
       </Row>
 
-      {/* Nueva sección */}
-
-      {/* Nueva sección */}
       <Container className="fullwidth mt-2" fluid>
         <Row>
           <h2 className="text-center w-100 my-5">
@@ -82,22 +83,25 @@ export const Home = () => {
                   alt="Gato Azul"
                   className="img-fluid card-select"
                 />
-              </Col >
-            
-    
+              </Col>
             </Row>
-              <SuccessStories />
+            <SuccessStories />
           </Col>
         </Row>
       </Container>
 
-     <ModalForm show={show} handleClose={handleClose}></ModalForm>
+      <ModalForm show={show} handleClose={handleClose} onLoginSuccess={handleLoginSuccess} />
 
-
+      {showAlert && (
+        <Alert
+          variant="success"
+          onClose={() => setShowAlert(false)}
+          dismissible
+          className="mt-3"
+        >
+          Login exitoso!
+        </Alert>
+      )}
     </Container>
-
-
-
-
   );
 };

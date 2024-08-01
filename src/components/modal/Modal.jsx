@@ -1,11 +1,42 @@
 import React, { useState } from 'react';
-import { Button, Modal, Form, Nav } from "react-bootstrap";
+import { Button, Modal, Form, Nav } from 'react-bootstrap';
 
-export const ModalForm = ({ show, handleClose }) => {
+export const ModalForm = ({ show, handleClose, onLoginSuccess }) => {
   const [activeTab, setActiveTab] = useState('login');
+  const [nombre, setNombre] = useState('');
+  const [contrasena, setContrasena] = useState('');
+  const [error, setError] = useState('');
 
   const handleTabClick = (value) => {
     setActiveTab(value);
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:8080/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ nombre, contrasena }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Nombre o contraseña incorrecta!');
+      }
+
+      const data = await response.json();
+      // Guardar el token de autenticación
+      localStorage.setItem('authToken', data.jwTtoken);
+      console.log('Login exitoso:', data);
+
+      onLoginSuccess(); // Llamar a la función de éxito de login
+
+      handleClose(); // Cerrar el modal en caso de login exitoso
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   return (
@@ -28,34 +59,32 @@ export const ModalForm = ({ show, handleClose }) => {
         </Nav>
 
         {activeTab === 'login' && (
-          <Form>
-            <Form.Group controlId="formBasicEmail" className="mb-3">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+          <Form onSubmit={handleLogin}>
+            <Form.Group controlId="formBasicUsername" className="mb-3">
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter nombre"
+                value={nombre}
+                onChange={(e) => setNombre(e.target.value)}
+              />
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword" className="mb-3">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Label>Contraseña</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={contrasena}
+                onChange={(e) => setContrasena(e.target.value)}
+              />
             </Form.Group>
 
-            <Form.Group controlId="formBasicCheckbox" className="mb-3">
-              <Form.Check type="checkbox" label="Remember me" />
-            </Form.Group>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
 
             <Button variant="primary" type="submit" className="w-100 mb-3">
-              Registrate
+              Login
             </Button>
-            <div className="text-center">
-              <p>No eres mienbro? <a href="#!">Registrate</a></p>
-              <p>o registrate con:</p>
-              <div className="d-flex justify-content-center">
-                <Button variant="link" className="m-1"><i className="fab fa-facebook-f"></i></Button>
-                <Button variant="link" className="m-1"><i className="fab fa-twitter"></i></Button>
-                <Button variant="link" className="m-1"><i className="fab fa-google"></i></Button>
-                <Button variant="link" className="m-1"><i className="fab fa-github"></i></Button>
-              </div>
-            </div>
           </Form>
         )}
 
@@ -88,15 +117,6 @@ export const ModalForm = ({ show, handleClose }) => {
             <Button variant="primary" type="submit" className="w-100 mb-3">
               Registrate
             </Button>
-            <div className="text-center">
-              <p>o registrate con:</p>
-              <div className="d-flex justify-content-center">
-                <Button variant="link" className="m-1"><i className="fab fa-facebook-f"></i></Button>
-                <Button variant="link" className="m-1"><i className="fab fa-twitter"></i></Button>
-                <Button variant="link" className="m-1"><i className="fab fa-google"></i></Button>
-                <Button variant="link" className="m-1"><i className="fab fa-github"></i></Button>
-              </div>
-            </div>
           </Form>
         )}
       </Modal.Body>
