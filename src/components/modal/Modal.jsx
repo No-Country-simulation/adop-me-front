@@ -64,7 +64,7 @@ export const ModalForm = ({ show, handleClose, onLoginSuccess }) => {
               <Form.Label>Nombre</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter nombre"
+                placeholder="ingrese nombre"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
               />
@@ -74,7 +74,7 @@ export const ModalForm = ({ show, handleClose, onLoginSuccess }) => {
               <Form.Label>Contraseña</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="Password"
+                placeholder="Ingrese contraseña"
                 value={contrasena}
                 onChange={(e) => setContrasena(e.target.value)}
               />
@@ -92,17 +92,17 @@ export const ModalForm = ({ show, handleClose, onLoginSuccess }) => {
           <Form>
             <Form.Group controlId="formBasicName" className="mb-3">
               <Form.Label>Nombre</Form.Label>
-              <Form.Control type="text" placeholder="Enter name" />
+              <Form.Control type="text" placeholder="INgrese nombre" />
             </Form.Group>
 
             <Form.Group controlId="formBasicUsername" className="mb-3">
-              <Form.Label>Username</Form.Label>
-              <Form.Control type="text" placeholder="Enter username" />
+              <Form.Label>Apellido</Form.Label>
+              <Form.Control type="text" placeholder="Ingrese apellido" />
             </Form.Group>
 
             <Form.Group controlId="formBasicEmail" className="mb-3">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Control type="email" placeholder="Ingrese email" />
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword" className="mb-3">
@@ -111,7 +111,7 @@ export const ModalForm = ({ show, handleClose, onLoginSuccess }) => {
             </Form.Group>
 
             <Form.Group controlId="formBasicCheckbox" className="mb-3">
-              <Form.Check type="checkbox" label="I have read and agree to the terms" />
+              <Form.Check type="checkbox" label="Yo he leido los terminos y condiciones" />
             </Form.Group>
 
             <Button variant="primary" type="submit" className="w-100 mb-3">
