@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Image, Row, Col, Button, Alert } from 'react-bootstrap';
 import { Facebook, Instagram, Google, Github } from 'react-bootstrap-icons';
 import ondas from '../../assets/ondas.jpg';
@@ -7,17 +7,23 @@ import gatoAzul from '../../assets/gatoAzul.jpg';
 import './home.css';
 import { ModalForm } from '../../components/modal/Modal';
 import { SuccessStories } from '../sucessStories/SuccessStories';
+import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
   const [show, setShow] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const navigate = useNavigate();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const handleLoginSuccess = () => {
     setShowAlert(true);
-    setTimeout(() => setShowAlert(false), 3000); // Ocultar la alerta después de 3 segundos
+    setTimeout(() => setShowAlert(false), 3000); 
+  };
+
+  const handleSelect = (especie) => {
+    navigate(`/mascotas?filter=${especie}`);
   };
 
   return (
@@ -40,9 +46,7 @@ export const Home = () => {
                     Sé parte de la comunidad Adopt Me y da el primer paso a construir una 
                     relación especial y duradera con tu nuevo amigo.
                     <br />
-      
                   </strong>
-                  
                   Juntos haremos que la adopción de mascotas sea más sencilla y 
                   efectiva. Te acompañamos en cada paso del proceso, desde la elección de tu 
                   nuevo amigo hasta consejos prácticos sobre cuidado, alimentación y 
@@ -81,6 +85,7 @@ export const Home = () => {
                   src={perroAzul}
                   alt="Perro Azul"
                   className="img-fluid card-select"
+                  onClick={() => handleSelect('perro')}
                 />
               </Col>
               <Col xs="auto" className="text-center">
@@ -88,6 +93,7 @@ export const Home = () => {
                   src={gatoAzul}
                   alt="Gato Azul"
                   className="img-fluid card-select"
+                  onClick={() => handleSelect('gato')}
                 />
               </Col>
             </Row>
