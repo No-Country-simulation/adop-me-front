@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Mascota } from "../Mascota/Mascota";
 import Row from "react-bootstrap/Row";
 import BotonesFiltro from "../BotonesFiltro/BotonesFiltro";
 import { Container } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
 
 const mascotData = [
   {
@@ -107,13 +108,24 @@ export function MascotCards() {
   const mascotas = mascotData;
   const [item, setItem] = useState(mascotas);
   const mascotaItems = [...new Set(mascotas.map((val) => val.especie))];
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const filter = params.get("filter");
+
+    if (filter) {
+      filtroMascotas(filter);
+    }
+  }, [location.search]);
 
   function filtroMascotas(especie) {
     const newItems = mascotas.filter((newVal) => newVal.especie === especie);
     setItem(newItems);
   }
+
   return (
-    <Container className="fullwidth " fluid>
+    <Container className="fullwidth" fluid>
       <h2 className="mb-5 m-5">Mascotas en adopcion</h2>
       <BotonesFiltro
         mascotaItems={mascotaItems}

@@ -5,6 +5,8 @@ export const ModalForm = ({ show, handleClose, onLoginSuccess }) => {
   const [activeTab, setActiveTab] = useState('login');
   const [nombre, setNombre] = useState('');
   const [contrasena, setContrasena] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [email, setEmail] = useState('');
   const [error, setError] = useState('');
 
   const handleTabClick = (value) => {
@@ -23,17 +25,46 @@ export const ModalForm = ({ show, handleClose, onLoginSuccess }) => {
       });
 
       if (!response.ok) {
-        throw new Error('Nombre o contraseña incorrecta!');
+        const errorText = await response.text(); // Leer el texto de la respuesta
+        throw new Error(errorText);
       }
 
       const data = await response.json();
-      // Guardar el token de autenticación
       localStorage.setItem('authToken', data.jwTtoken);
       console.log('Login exitoso:', data);
 
-      onLoginSuccess(); // Llamar a la función de éxito de login
+      onLoginSuccess();
+      handleClose();
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
-      handleClose(); // Cerrar el modal en caso de login exitoso
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:8080/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nombre,
+          apellido,
+          correoElectronico: email,
+          contrasena
+        }),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text(); // Leer el texto de la respuesta
+        throw new Error(errorText);
+      }
+
+      const data = await response.json();
+      console.log('Registro exitoso:', data);
+      setError('');
+      handleTabClick('login'); // Cambiar a la pestaña de login en caso de éxito
     } catch (error) {
       setError(error.message);
     }
@@ -42,7 +73,7 @@ export const ModalForm = ({ show, handleClose, onLoginSuccess }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Acceder</Modal.Title>
+        <Modal.Title>{activeTab === 'login' ? 'Acceder' : 'Registrar'}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Nav variant="tabs" defaultActiveKey="login" className="mb-3">
@@ -64,7 +95,7 @@ export const ModalForm = ({ show, handleClose, onLoginSuccess }) => {
               <Form.Label>Nombre</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="ingrese nombre"
+                placeholder="Ingrese nombre"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
               />
@@ -89,30 +120,52 @@ export const ModalForm = ({ show, handleClose, onLoginSuccess }) => {
         )}
 
         {activeTab === 'register' && (
-          <Form>
+          <Form onSubmit={handleRegister}>
             <Form.Group controlId="formBasicName" className="mb-3">
               <Form.Label>Nombre</Form.Label>
-              <Form.Control type="text" placeholder="INgrese nombre" />
+              <Form.Control
+                type="text"
+                placeholder="Ingrese nombre"
+                value={nombre}
+                onChange={(e) => setNombre(e.target.value)}
+              />
             </Form.Group>
 
-            <Form.Group controlId="formBasicUsername" className="mb-3">
+            <Form.Group controlId="formBasicApellido" className="mb-3">
               <Form.Label>Apellido</Form.Label>
-              <Form.Control type="text" placeholder="Ingrese apellido" />
+              <Form.Control
+                type="text"
+                placeholder="Ingrese apellido"
+                value={apellido}
+                onChange={(e) => setApellido(e.target.value)}
+              />
             </Form.Group>
 
             <Form.Group controlId="formBasicEmail" className="mb-3">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Ingrese email" />
+              <Form.Control
+                type="email"
+                placeholder="Ingrese email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword" className="mb-3">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Label>Contraseña</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Ingrese contraseña"
+                value={contrasena}
+                onChange={(e) => setContrasena(e.target.value)}
+              />
             </Form.Group>
 
             <Form.Group controlId="formBasicCheckbox" className="mb-3">
-              <Form.Check type="checkbox" label="Yo he leido los terminos y condiciones" />
+              <Form.Check type="checkbox" label="He leído los términos y condiciones" />
             </Form.Group>
+
+            {error && <p style={{ color: 'red' }}>{error}</p>}
 
             <Button variant="primary" type="submit" className="w-100 mb-3">
               Registrate
