@@ -1,14 +1,16 @@
 
   .about{
     max-width: 100%;
-    padding:  0 2rem;
+    margin-top: -2.2rem;
+    padding-top: -8rem;
     margin-left: 0rem;
+  
     padding-left: 0rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    top: 0;
+    
   }
 
 
@@ -52,6 +54,7 @@
 }
 
 .principios-container-title {
+    margin-top: 8rem;
     color: #544741;
     font-weight: 600;
     font-size: 3.5rem;

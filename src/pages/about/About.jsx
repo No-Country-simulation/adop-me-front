@@ -26,7 +26,7 @@ export const About = () => {
       <section className='principios'>
         <div className='principios-container'>
             <div className='principios-container-intro'>
-                <h2 className='principios-container-title mt-5'>Nuestros Principios</h2>
+                <h2 className='principios-container-title'>Nuestros Principios</h2>
                 <p className='principios-container-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nihil officia dolores esse distinctio praesentium?</p>
             </div>
         </div>

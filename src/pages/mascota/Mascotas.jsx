@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 
 export default function Mascotas() {
   return (
-    <Container className="fullwidth" fluid>
+    <Container className="fullwidth mar" fluid>
       <MascotCards />
     </Container>
   );

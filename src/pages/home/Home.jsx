@@ -37,10 +37,16 @@ export const Home = () => {
                 <h2 className="subTitulo">Adopta amor, adopta una mascota</h2>
                 <p className="descripcion">
                   <strong>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sé parte de la comunidad Adopt Me y da el primer paso a construir una 
+                    relación especial y duradera con tu nuevo amigo.
+                    <br />
+      
                   </strong>
-                  Incidunt nostrum accusamus ducimus? Eligendi maiores vero
-                  vitae, aliquam doloribus.
+                  
+                  Juntos haremos que la adopción de mascotas sea más sencilla y 
+                  efectiva. Te acompañamos en cada paso del proceso, desde la elección de tu 
+                  nuevo amigo hasta consejos prácticos sobre cuidado, alimentación y 
+                  adaptación.
                 </p>
               </Col>
             </Row>

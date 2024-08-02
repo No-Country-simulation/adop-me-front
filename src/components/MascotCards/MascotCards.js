@@ -113,7 +113,7 @@ export function MascotCards() {
     setItem(newItems);
   }
   return (
-    <Container className="fullwidth" fluid>
+    <Container className="fullwidth " fluid>
       <h2 className="mb-5 m-5">Mascotas en adopcion</h2>
       <BotonesFiltro
         mascotaItems={mascotaItems}

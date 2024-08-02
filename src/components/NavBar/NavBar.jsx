@@ -4,10 +4,14 @@ import logo from "../../assets/logo.png";
 import { animateScroll as scroll } from "react-scroll";
 import { Link } from "react-router-dom";
 import menu from "../../assets/menu.png";
+import { Button } from "react-bootstrap";
+import { ModalForm } from "../../components/modal/Modal"; // Asegúrate de importar el componente ModalForm
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [navBackground, setNavBackground] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [activeTab, setActiveTab] = useState('login');
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -29,6 +33,15 @@ const Navbar = () => {
       duration: 500,
       smooth: "easeInOutQuart",
     });
+  };
+
+  const handleShowModal = (tab) => {
+    setActiveTab(tab);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -93,6 +106,8 @@ const Navbar = () => {
         >
           CONTACTANOS
         </Link>
+        <Button variant="outline-primary" className="mx-2" onClick={() => handleShowModal('login')}>Login</Button>
+        <Button variant="outline-secondary" onClick={() => handleShowModal('register')}>Register</Button>
       </div>
       {/*Navbar Mobile*/}
       <img
@@ -124,11 +139,11 @@ const Navbar = () => {
           className="listItem"
           onClick={() => setShowMenu(false)}
         >
-          ABOUT US
+          NOSOTROS
         </Link>
         <Link
           activeClass="active"
-          to="share"
+          to="/mascotas"
           spy={true}
           smooth={true}
           offset={-50}
@@ -136,11 +151,11 @@ const Navbar = () => {
           className="listItem"
           onClick={() => setShowMenu(false)}
         >
-          SHARE YOUR DOG
+          ADOPTA
         </Link>
         <Link
           activeClass="active"
-          to="adopt"
+          to="/contact"
           spy={true}
           smooth={true}
           offset={-50}
@@ -148,21 +163,13 @@ const Navbar = () => {
           className="listItem"
           onClick={() => setShowMenu(false)}
         >
-          ADOPT
+          CONTACTANOS
         </Link>
-        <Link
-          activeClass="active"
-          to="contact"
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={500}
-          className="listItem"
-          onClick={() => setShowMenu(false)}
-        >
-          CONTACT
-        </Link>
+        <Button variant="outline-primary" className="mx-2" onClick={() => handleShowModal('login')}>Login</Button>
+        <Button variant="outline-secondary" onClick={() => handleShowModal('register')}>Register</Button>
       </div>
+
+      <ModalForm show={showModal} handleClose={handleCloseModal} activeTab={activeTab} />
     </nav>
   );
 };
