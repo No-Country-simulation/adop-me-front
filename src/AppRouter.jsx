@@ -1,6 +1,7 @@
 // src/AppRouter.js
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+
 import { Home } from "./pages/home/Home";
 import Navbar from "./components/NavBar/NavBar";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
@@ -11,7 +12,8 @@ import { Share } from "./pages/share/Share";
 import { Adopt } from "./pages/adopt/Adopt";
 import Mascotas from "./pages/mascota/Mascotas";
 import { NotFound } from "./pages/NotFound/NotFound";
-import { AuthProvider } from "./context/AuthContext "; // Ruta corregida
+import { AuthProvider } from "./context/AuthContext "; 
+import  Router from "./routes/sections"; 
 
 export const AppRouter = () => {
   return (
@@ -25,13 +27,16 @@ export const AppRouter = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/share" element={<Share />} />
           <Route path="/adopt" element={<Adopt />} />
+          <Route path="*" element={<NotFound />} />
 
+          <Route path="/dashboard" element={<Router />} />
+       
           {/* Ruta protegida */}
           <Route element={<PrivateRoute />}>
-            <Route path="/dashboard" element={<Adopt />} />
+            
           </Route>
 
-          <Route path="*" element={<NotFound />} />
+          
         </Routes>
       </AuthProvider>
       <Footer />
